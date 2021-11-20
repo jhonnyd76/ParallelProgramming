@@ -1,4 +1,4 @@
-package net.scriptsource;
+package net.scriptsource.wertschöpfung;
 
 public class Consumer extends Company{
 
@@ -6,8 +6,13 @@ public class Consumer extends Company{
         super(name, store);
     }
 
+    public void run(){
+        while (!interrupted()) {
+            consume();
+        }
+    }
     public void consume(){
         Object item = new Object();
-        store.removeItem(item, 2);
+        store.removeItem(item, -2);
     }
 }
